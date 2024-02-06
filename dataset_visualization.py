@@ -33,7 +33,7 @@ def play_files_parallel(td_files, labels=None, delta_t=50000, skip=0):
     # open the video object for the input files
     videos = [PSEELoader(td_file) for td_file in td_files]
     # use the naming pattern to find the corresponding box file
-    box_videos = [PSEELoader(glob(td_file.split('_td.dat')[0] +  '*.npy')[0]) for td_file in td_files]
+    box_videos = [PSEELoader(glob(td_file.split('_cd.dat')[0] +  '*.npy')[0]) for td_file in td_files]
 
     height, width = videos[0].get_size()
     labelmap = vis.LABELMAP if height == 240 else vis.LABELMAP_LARGE
