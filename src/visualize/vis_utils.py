@@ -15,7 +15,8 @@ from __future__ import print_function
 import numpy as np
 import cv2
 
-LABELMAP = ["car", "pedestrian"]
+# LABELMAP = ["car", "pedestrian"]
+LABELMAP = ["pedestrian", "car"]
 LABELMAP_LARGE = ['pedestrian', 'two wheeler', 'car', 'truck', 'bus', 'traffic sign', 'traffic light']
 
 
@@ -62,4 +63,4 @@ def draw_bboxes(img, boxes, labelmap=LABELMAP):
         center = ((pt1[0] + pt2[0]) // 2, (pt1[1] + pt2[1]) // 2)
         cv2.rectangle(img, pt1, pt2, color, 1)
         cv2.putText(img, class_name, (center[0], pt2[1] - 1), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color)
-        cv2.putText(img, str(score), (center[0], pt1[1] - 1), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color)
+        #cv2.putText(img, str(score), (center[0], pt1[1] - 1), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color)
